@@ -1,1 +1,26 @@
+{
+  // Stardew Valley
+  "Config.SeasonalMusic.name": "Seasonal music",
+  "Config.SeasonalMusic.description": "Enable seasonal music in the Valley?",
 
+  "Config.SecretWoodsMusic.name": "Secret Woods music",
+  "Config.SecretWoodsMusic.description": "Enable music in the Secret Woods?",
+
+  "Config.TownMusic.name": "Town music",
+  "Config.TownMusic.description": "Enable music in Pelican Town?",
+
+  // Desert
+  "Config.DesertMusic.name": "Desert music",
+  "Config.DesertMusic.description": "Enable main music in the Calico Desert?",
+
+  // Island
+  "Config.IslandMusic.name": "Island music",
+  "Config.IslandMusic.description": "Enable main music on Ginger Island?",
+
+  // Mines
+  "Config.MinesMusic.name": "Mines music",
+  "Config.MinesMusic.description": "Enable music in the Mines and Skull Cavern?",
+
+  "Config.VolcanoDungeonMusic.name": "Volcano Dungeon music",
+  "Config.VolcanoDungeonMusic.description": "Enable music in the Volcano Dungeon?"
+}
