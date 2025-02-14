@@ -1,0 +1,21 @@
+﻿{
+  "Name": "Silence is Golden",
+  "Author": "spakov",
+  "Version": "1.0.0",
+  "Description": "Disables seasonal and other common music, allowing ambient sounds to play immediately.",
+  "UniqueID": "spakov.SilenceIsGolden",
+   "ContentPackFor": {
+      "UniqueID": "Pathoschild.ContentPatcher"
+   },
+   "Dependencies": [
+     {
+       "UniqueID": "aedenthorn.SoundTweaker",
+       "MinimumVersion": "0.4.0"
+     },
+     {
+       "UniqueID": "spacechase0.GenericModConfigMenu",
+       "MinimumVersion": "1.14.1",
+       "IsRequired": false
+     }
+   ]
+}

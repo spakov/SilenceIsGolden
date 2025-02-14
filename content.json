@@ -1,0 +1,571 @@
+﻿{
+  "Format": "1.26.0",
+
+  "ConfigSchema": {
+    //// Stardew Valley
+    "SeasonalMusic": {
+      "AllowValues": "true, false",
+      "Default": "false",
+      "Section": "Stardew Valley"
+    },
+    "SecretWoodsMusic": {
+      "AllowValues": "true, false",
+      "Default": "true",
+      "Section": "Stardew Valley"
+    },
+    "TownMusic": {
+      "AllowValues": "true, false",
+      "Default": "true",
+      "Section": "Stardew Valley"
+    },
+
+    //// Desert
+    "DesertMusic": {
+      "AllowValues": "true, false",
+      "Default": "false",
+      "Section": "Desert"
+    },
+
+    //// Island
+    "IslandMusic": {
+      "AllowValues": "true, false",
+      "Default": "false",
+      "Section": "Island"
+    },
+
+    //// Mines
+    "MinesMusic": {
+      "AllowValues": "true, false",
+      "Default": "false",
+      "Section": "Mines"
+    },
+    "VolcanoDungeonMusic": {
+      "AllowValues": "true, false",
+      "Default": "false",
+      "Section": "Mines"
+    }
+  },
+  "Changes": [
+    {
+      //// Stardew Valley
+
+      // Seasonal music
+      "Action": "EditData",
+      "Target": "aedenthorn.SoundTweaker/dictionary",
+      "Entries": {
+        "spring1": {
+          "sounds": [
+            {
+              "filePaths": [
+                "{{InternalAssetKey: assets/silence.wav}}"
+              ]
+            }
+          ]
+        },
+        "spring2": {
+          "sounds": [
+            {
+              "filePaths": [
+                "{{InternalAssetKey: assets/silence.wav}}"
+              ]
+            }
+          ]
+        },
+        "spring3": {
+          "sounds": [
+            {
+              "filePaths": [
+                "{{InternalAssetKey: assets/silence.wav}}"
+              ]
+            }
+          ]
+        },
+        "summer1": {
+          "sounds": [
+            {
+              "filePaths": [
+                "{{InternalAssetKey: assets/silence.wav}}"
+              ]
+            }
+          ]
+        },
+        "summer2": {
+          "sounds": [
+            {
+              "filePaths": [
+                "{{InternalAssetKey: assets/silence.wav}}"
+              ]
+            }
+          ]
+        },
+        "summer3": {
+          "sounds": [
+            {
+              "filePaths": [
+                "{{InternalAssetKey: assets/silence.wav}}"
+              ]
+            }
+          ]
+        },
+        "fall1": {
+          "sounds": [
+            {
+              "filePaths": [
+                "{{InternalAssetKey: assets/silence.wav}}"
+              ]
+            }
+          ]
+        },
+        "fall2": {
+          "sounds": [
+            {
+              "filePaths": [
+                "{{InternalAssetKey: assets/silence.wav}}"
+              ]
+            }
+          ]
+        },
+        "fall3": {
+          "sounds": [
+            {
+              "filePaths": [
+                "{{InternalAssetKey: assets/silence.wav}}"
+              ]
+            }
+          ]
+        },
+        "winter1": {
+          "sounds": [
+            {
+              "filePaths": [
+                "{{InternalAssetKey: assets/silence.wav}}"
+              ]
+            }
+          ]
+        },
+        "winter2": {
+          "sounds": [
+            {
+              "filePaths": [
+                "{{InternalAssetKey: assets/silence.wav}}"
+              ]
+            }
+          ]
+        },
+        "winter3": {
+          "sounds": [
+            {
+              "filePaths": [
+                "{{InternalAssetKey: assets/silence.wav}}"
+              ]
+            }
+          ]
+        }
+      },
+      "When": {
+        "SeasonalMusic": false
+      },
+      "Update": "OnLocationChange"
+    },
+    {
+      "Action": "EditData",
+      "Target": "aedenthorn.SoundTweaker/dictionary",
+      "Entries": {
+        "spring1": {
+          "sounds": [
+            {
+              "cuePaths": [
+                "spring1"
+              ]
+            }
+          ]
+        },
+        "spring2": {
+          "sounds": [
+            {
+              "cuePaths": [
+                "spring2"
+              ]
+            }
+          ]
+        },
+        "spring3": {
+          "sounds": [
+            {
+              "cuePaths": [
+                "spring3"
+              ]
+            }
+          ]
+        },
+        "summer1": {
+          "sounds": [
+            {
+              "cuePaths": [
+                "summer1"
+              ]
+            }
+          ]
+        },
+        "summer2": {
+          "sounds": [
+            {
+              "cuePaths": [
+                "summer2"
+              ]
+            }
+          ]
+        },
+        "summer3": {
+          "sounds": [
+            {
+              "cuePaths": [
+                "summer3"
+              ]
+            }
+          ]
+        },
+        "fall1": {
+          "sounds": [
+            {
+              "cuePaths": [
+                "fall1"
+              ]
+            }
+          ]
+        },
+        "fall2": {
+          "sounds": [
+            {
+              "cuePaths": [
+                "fall2"
+              ]
+            }
+          ]
+        },
+        "fall3": {
+          "sounds": [
+            {
+              "cuePaths": [
+                "fall3"
+              ]
+            }
+          ]
+        },
+        "winter1": {
+          "sounds": [
+            {
+              "cuePaths": [
+                "winter1"
+              ]
+            }
+          ]
+        },
+        "winter2": {
+          "sounds": [
+            {
+              "cuePaths": [
+                "winter2"
+              ]
+            }
+          ]
+        },
+        "winter3": {
+          "sounds": [
+            {
+              "cuePaths": [
+                "winter3"
+              ]
+            }
+          ]
+        }
+      },
+      "When": {
+        "SeasonalMusic": true
+      },
+      "Update": "OnLocationChange"
+    },
+
+    // Secret Woods music
+    {
+      "Action": "EditData",
+      "Target": "aedenthorn.SoundTweaker/dictionary",
+      "Entries": {
+        "woodsTheme": {
+          "sounds": [
+            {
+              "filePaths": [
+                "{{InternalAssetKey: assets/silence.wav}}"
+              ]
+            }
+          ]
+        }
+      },
+      "When": {
+        "SecretWoodsMusic": false
+      },
+      "Update": "OnLocationChange"
+    },
+    {
+      "Action": "EditData",
+      "Target": "aedenthorn.SoundTweaker/dictionary",
+      "Entries": {
+        "woodsTheme": {
+          "sounds": [
+            {
+              "cuePaths": [
+                "woodsTheme"
+              ]
+            }
+          ]
+        }
+      },
+      "When": {
+        "SecretWoodsMusic": true
+      },
+      "Update": "OnLocationChange"
+    },
+
+    // Town music
+    {
+      "Action": "EditData",
+      "Target": "aedenthorn.SoundTweaker/dictionary",
+      "Entries": {
+        "springtown": {
+          "sounds": [
+            {
+              "filePaths": [
+                "{{InternalAssetKey: assets/silence.wav}}"
+              ]
+            }
+          ]
+        }
+      },
+      "When": {
+        "TownMusic": false
+      },
+      "Update": "OnLocationChange"
+    },
+    {
+      "Action": "EditData",
+      "Target": "aedenthorn.SoundTweaker/dictionary",
+      "Entries": {
+        "springtown": {
+          "sounds": [
+            {
+              "cuePaths": [
+                "springtown"
+              ]
+            }
+          ]
+        }
+      },
+      "When": {
+        "TownMusic": true
+      },
+      "Update": "OnLocationChange"
+    },
+
+    //// Desert
+
+    // Desert music
+    {
+      "Action": "EditData",
+      "Target": "aedenthorn.SoundTweaker/dictionary",
+      "Entries": {
+        "wavy": {
+          "sounds": [
+            {
+              "filePaths": [
+                "{{InternalAssetKey: assets/silence.wav}}"
+              ]
+            }
+          ]
+        }
+      },
+      "When": {
+        "DesertMusic": false
+      },
+      "Update": "OnLocationChange"
+    },
+    {
+      "Action": "EditData",
+      "Target": "aedenthorn.SoundTweaker/dictionary",
+      "Entries": {
+        "wavy": {
+          "sounds": [
+            {
+              "cuePaths": [
+                "wavy"
+              ]
+            }
+          ]
+        }
+      },
+      "When": {
+        "DesertMusic": true
+      },
+      "Update": "OnLocationChange"
+    },
+
+    //// Island
+
+    // Island music
+    {
+      "Action": "EditData",
+      "Target": "aedenthorn.SoundTweaker/dictionary",
+      "Entries": {
+        "IslandMusic": {
+          "sounds": [
+            {
+              "filePaths": [
+                "{{InternalAssetKey: assets/silence.wav}}"
+              ]
+            }
+          ]
+        }
+      },
+      "When": {
+        "IslandMusic": false
+      },
+      "Update": "OnLocationChange"
+    },
+    {
+      "Action": "EditData",
+      "Target": "aedenthorn.SoundTweaker/dictionary",
+      "Entries": {
+        "IslandMusic": {
+          "sounds": [
+            {
+              "cuePaths": [
+                "IslandMusic"
+              ]
+            }
+          ]
+        }
+      },
+      "When": {
+        "IslandMusic": true
+      },
+      "Update": "OnLocationChange"
+    },
+
+    //// Mines
+
+    // Mines music
+    {
+      "Action": "EditData",
+      "Target": "aedenthorn.SoundTweaker/dictionary",
+      "Entries": {
+        "EarthMine": {
+          "sounds": [
+            {
+              "filePaths": [
+                "{{InternalAssetKey: assets/silence.wav}}"
+              ]
+            }
+          ]
+        },
+        "FrostMine": {
+          "sounds": [
+            {
+              "filePaths": [
+                "{{InternalAssetKey: assets/silence.wav}}"
+              ]
+            }
+          ]
+        },
+        "LavaMine": {
+          "sounds": [
+            {
+              "filePaths": [
+                "{{InternalAssetKey: assets/silence.wav}}"
+              ]
+            }
+          ]
+        }
+      },
+      "When": {
+        "MinesMusic": false
+      },
+      "Update": "OnLocationChange"
+    },
+    {
+      "Action": "EditData",
+      "Target": "aedenthorn.SoundTweaker/dictionary",
+      "Entries": {
+        "EarthMine": {
+          "sounds": [
+            {
+              "cuePaths": [
+                "EarthMine"
+              ]
+            }
+          ]
+        },
+        "FrostMine": {
+          "sounds": [
+            {
+              "cuePaths": [
+                "FrostMine"
+              ]
+            }
+          ]
+        },
+        "LavaMine": {
+          "sounds": [
+            {
+              "cuePaths": [
+                "LavaMine"
+              ]
+            }
+          ]
+        }
+      },
+      "When": {
+        "MinesMusic": true
+      },
+      "Update": "OnLocationChange"
+    },
+
+    // Volcano Dungeon music
+    {
+      "Action": "EditData",
+      "Target": "aedenthorn.SoundTweaker/dictionary",
+      "Entries": {
+        "VolcanoMines": {
+          "sounds": [
+            {
+              "filePaths": [
+                "{{InternalAssetKey: assets/silence.wav}}"
+              ]
+            }
+          ]
+        }
+      },
+      "When": {
+        "VolcanoDungeonMusic": false
+      },
+      "Update": "OnLocationChange"
+    },
+    {
+      "Action": "EditData",
+      "Target": "aedenthorn.SoundTweaker/dictionary",
+      "Entries": {
+        "VolcanoMines": {
+          "sounds": [
+            {
+              "cuePaths": [
+                "VolcanoMines"
+              ]
+            }
+          ]
+        }
+      },
+      "When": {
+        "VolcanoDungeonMusic": true
+      },
+      "Update": "OnLocationChange"
+    }
+  ]
+}
