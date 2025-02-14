@@ -1,9 +1,10 @@
 ﻿{
   "Name": "Silence is Golden",
   "Author": "spakov",
-  "Version": "1.0.0",
+  "Version": "1.0.1",
   "Description": "Disables seasonal and other common music, allowing ambient sounds to play immediately.",
   "UniqueID": "spakov.SilenceIsGolden",
+  "UpdateKeys": [ "Nexus:31677" ]
    "ContentPackFor": {
       "UniqueID": "Pathoschild.ContentPatcher"
    },
