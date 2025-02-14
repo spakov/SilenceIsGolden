@@ -4,7 +4,7 @@
   "Version": "1.0.1",
   "Description": "Disables seasonal and other common music, allowing ambient sounds to play immediately.",
   "UniqueID": "spakov.SilenceIsGolden",
-  "UpdateKeys": [ "Nexus:31677" ]
+  "UpdateKeys": [ "Nexus:31677" ],
    "ContentPackFor": {
       "UniqueID": "Pathoschild.ContentPatcher"
    },
