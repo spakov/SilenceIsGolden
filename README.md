@@ -74,7 +74,7 @@ Here's the default `config.json`:
 * Sounds are patched when the day begins and when the player changes locations
   (i.e., moves between screens). Changing the configuration will not
   immediately stop any music that is already playing.
-* Pelican Town is eerily silent with no music playing—there are no ambient
+* Pelican Town is eerily silent with no music playing—there are no ambient
   sounds there.
 
 ## Mod details
