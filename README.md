@@ -74,12 +74,12 @@ Here's the default `config.json`:
 * Sounds are patched when the day begins and when the player changes locations
   (i.e., moves between screens). Changing the configuration will not
   immediately stop any music that is already playing.
-* Pelican Town is eerily silent with no music playing--there are no ambient
+* Pelican Town is eerily silent with no music playing—there are no ambient
   sounds there.
 
 ## Mod details
-* **Nexus Mods**: [Link](https://example.com/)
-* **GitHub**: [Link](https://example.com/)
+* **Nexus Mods**: [Link](https://www.nexusmods.com/stardewvalley/mods/31677)
+* **GitHub**: [Link](https://github.com/spakov/SilenceIsGolden)
 * **`UniqueID`**: `spakov.SilenceIsGolden`
 
 Music playback triggering is
@@ -157,5 +157,5 @@ Playing](https://www.nexusmods.com/stardewvalley/mods/19441), which made
 creating this mod relatively painless.
 
 ## See also
-* [Release notes](https://example.com)
-* [Source code](https://example.com)
+* [Release notes](https://github.com/spakov/SilenceIsGolden/blob/main/release-notes.md)
+* [Source code](https://github.com/spakov/SilenceIsGolden)
