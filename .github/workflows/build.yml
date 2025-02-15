@@ -1,0 +1,62 @@
+name: build
+
+on:
+  #push:
+    #branches: [ "dev" ]
+  #pull_request:
+    #branches: [ "dev" ]
+  workflow_dispatch:
+
+jobs:
+  uncomment:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: dev
+      
+      - name: Remove comments from JSON
+        run: find . -name '*.json' -exec sed -i -e ',//.*$,d' '{}' \;
+  validate:
+    needs: uncomment
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Validate JSON
+        run: find . -name '*.json' -print -exec python -mjson.tool '{}' \;
+  build:
+    needs: validate
+    runs-on: ubuntu-latest
+
+    env:
+      BuildDir: "[CP] SilenceIsGolden"
+      Manifest: manifest.json
+      Content: content.json
+      Documentation: "'LICENSE' 'README.md' 'release-notes.md'"
+      Assets: assets
+      I18n: i18n
+
+    steps:
+      - name: Create build directory
+        run: mkdir '$BuildDir'
+
+      - name: Update version and copy manifest
+        run: sed -e 's/^\([[:space:]]*"Version":\([[:space:]]\)*"\)[0-9]\+\.[0-9]\+\.[0-9]\+\(",[[:space:]]*\)$/\1\20.0.0\2/' '$Manifest' > '$BuildDir/$Manifest'
+
+      - name: Copy content
+        run: cp '$Content' '$BuildDir'/
+
+      - name: Copy documentation
+        run: cp $Documentation '$BuildDir'/
+
+      - name: Copy assets
+        run: cp -R '$Assets' '$BuildDir'/
+
+      - name: Copy i18n
+        run: cp -R '$I18n' '$BuildDir'/
+
+      - name: Show info
+        run: |
+          ls -R '$BuildDir'
+          cat '$BuildDir/$Manifest'
