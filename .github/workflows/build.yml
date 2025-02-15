@@ -8,27 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  checkout:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v4
-  uncomment:
-    needs: checkout
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Remove comments from JSON
-        run: find "${{ github.workspace }}" -name '*.json' -exec sed -i -e ',//.*$,d' '{}' \;
-  validate:
-    needs: uncomment
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Validate JSON
-        run: find "${{ github.workspace }}" -name '*.json' -print -exec python -mjson.tool '{}' \;
   build:
-    needs: validate
     runs-on: ubuntu-latest
 
     env:
@@ -40,10 +20,18 @@ jobs:
       I18n: "i18n"
 
     steps:
-      - name: Create build directory
+      - uses: actions/checkout@v4
+
+      - name: Format JSON
         run: |
-          ls -R "${{ github.workspace }}/"
-          mkdir "$BuildDir"
+          find "${{ github.workspace }}" -name '*.json' -exec sed -i -e ',//.*$,d' '{}' \;
+          find "${{ github.workspace }}" -name '*.json' -exec sed -i -e '/^[[:space:]]*$/d' '{}' \;
+
+      - name: Validate JSON
+        run: find "${{ github.workspace }}" -name '*.json' -print -exec python -mjson.tool '{}' \;
+      
+      - name: Create build directory
+        run: mkdir "$BuildDir"
 
       - name: Update version and copy manifest
         run: sed -e 's/^\([[:space:]]*"Version":\([[:space:]]\)*"\)[0-9]\+\.[0-9]\+\.[0-9]\+\(",[[:space:]]*\)$/\1\20.0.0\2/' "${{ github.workspace }}/$Manifest" > "$BuildDir/$Manifest"
