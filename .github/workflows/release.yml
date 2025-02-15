@@ -45,4 +45,4 @@ jobs:
           zip -r "SilenceIsGolden-$Version.zip" "$BuildDir"
 
       - name: Create release
-        run: ls -al "SilenceIsGolden*.zip"
+        run: ls -al SilenceIsGolden*.zip
