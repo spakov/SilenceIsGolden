@@ -1,6 +1,9 @@
 # Release Notes
 Release notes for each version are described in this file.
 
+## 1.0.4
+* Version bump to test GitHub workflow
+
 ## 1.0.3
 * Version bump to fix SMAPI out-of-date error
 
