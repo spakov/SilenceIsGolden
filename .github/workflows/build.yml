@@ -44,7 +44,7 @@ jobs:
         run: mkdir '$BuildDir'
 
       - name: Update version and copy manifest
-        run: sed -e 's/^\([[:space:]]*"Version":\([[:space:]]\)*"\)[0-9]\+\.[0-9]\+\.[0-9]\+\(",[[:space:]]*\)$/\1\20.0.0\2/' $Manifest > $BuildDir/$Manifest
+        run: echo sed -e 's/^\([[:space:]]*"Version":\([[:space:]]\)*"\)[0-9]\+\.[0-9]\+\.[0-9]\+\(",[[:space:]]*\)$/\1\20.0.0\2/' $Manifest \> $BuildDir/$Manifest
 
       - name: Copy content
         run: cp $Content $BuildDir/
