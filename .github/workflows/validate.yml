@@ -1,0 +1,27 @@
+name: validate
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    env:
+      Manifest: "manifest.json"
+      ReleaseNotes: "release-notes.md"
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Format JSON
+        run: find "${{ github.workspace }}" -name '*.json' -print0 | xargs -0 -L1 -- sed -i -e '/^[[:space:]]*\/\//d' -e '/^[[:space:]]*$/d'
+
+      - name: Validate JSON
+        run: find "${{ github.workspace }}" -name '*.json' -print0 | xargs -0 -L1 -- python -mjson.tool
+      
+      - name: Verify version
+        run: |
+          Version=$(sed -e 's/^\([[:space:]]*"Version":[[:space:]]*"\)\([0-9]\+\.[0-9]\+\.[0-9]\+\)\(",[[:space:]]*\)$/\2/' "${{ github.workspace }}/$Manifest")
+          grep '[[:space:]]*##[[:space:]]*'"$Version" "$ReleaseNotes" || echo "Release notes not updated!" 1>&2
