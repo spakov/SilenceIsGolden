@@ -32,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      BuildDir: "[CP] SilenceIsGolden"
+      BuildDir: "'[CP] SilenceIsGolden'"
       Manifest: "'manifest.json'"
       Content: "'content.json'"
       Documentation: "'LICENSE' 'README.md' 'release-notes.md'"
