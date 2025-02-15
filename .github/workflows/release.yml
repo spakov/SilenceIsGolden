@@ -18,6 +18,9 @@ jobs:
       Assets: "assets"
       I18n: "i18n"
 
+    permissions:
+      contents: write
+
     steps:
       - uses: actions/checkout@v4
 
@@ -51,4 +54,3 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: ${{ env.ReleaseFile }}
-          token: ${{ secrets.GITHUB_TOKEN }}
