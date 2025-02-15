@@ -15,7 +15,7 @@ jobs:
       BuildDir: "[CP] SilenceIsGolden"
       Manifest: "manifest.json"
       Content: "content.json"
-      Documentation: "$LICENSE README.md release-notes.md"
+      Documentation: "LICENSE README.md release-notes.md"
       Assets: "assets"
       I18n: "i18n"
 
