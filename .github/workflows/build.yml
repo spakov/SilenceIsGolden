@@ -13,6 +13,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: dev
       
       - name: Remove comments from JSON
         run: find . -name '*.json' -exec sed -i -e ',//.*$,d' '{}' \;
