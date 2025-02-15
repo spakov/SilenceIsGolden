@@ -23,5 +23,6 @@ jobs:
       
       - name: Verify version
         run: |
-          Version=$(sed -e 's/^\([[:space:]]*"Version":[[:space:]]*"\)\([0-9]\+\.[0-9]\+\.[0-9]\+\)\(",[[:space:]]*\)$/\2/' "${{ github.workspace }}/$Manifest")
-          grep '[[:space:]]*##[[:space:]]*'"$Version" "$ReleaseNotes" || echo "Release notes not updated!" 1>&2
+          Version=$(jq .Version "${{ github.workspace }}/$Manifest")
+          echo Checking release notes for version $Version...
+          grep '^[:space:]*##[:space:]*'"$Version" "$ReleaseNotes" || echo "Release notes not updated!" 1>&2 && exit $?
