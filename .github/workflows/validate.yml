@@ -23,6 +23,6 @@ jobs:
       
       - name: Verify version
         run: |
-          Version=$(jq .Version "${{ github.workspace }}/$Manifest")
+          Version=$(jq -r .Version "${{ github.workspace }}/$Manifest")
           echo Checking release notes for version $Version...
-          grep '^[:space:]*##[:space:]*'"$Version" "$ReleaseNotes" || echo "Release notes not updated!" 1>&2 && exit $?
+          grep '^[[:space:]]*##[[:space:]]*'"$Version" "$ReleaseNotes" || echo "Release notes not updated!" 1>&2 && exit 1
