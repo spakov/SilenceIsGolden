@@ -23,7 +23,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Format JSON
-        run: find "${{ github.workspace }}" -name '*.json' -print0 | xargs -0 -L1 -- sed -i -e '/^[[:space:]]*\/\/.*$,d' -e '/^[[:space:]]*$/d'
+        run: find "${{ github.workspace }}" -name '*.json' -print0 | xargs -0 -L1 -- sed -i -e '/^[[:space:]]*\/\//d' -e '/^[[:space:]]*$/d'
 
       - name: Validate JSON
         run: find "${{ github.workspace }}" -name '*.json' -print0 | xargs -0 -L1 -- python -mjson.tool
