@@ -19,25 +19,25 @@ jobs:
 
     steps:
       - name: Remove comments from JSON
-        run: find . -name '*.json' -exec sed -i -e ',//.*$,d' '{}' \;
+        run: find "${{ github.workspace }}" -name '*.json' -exec sed -i -e ',//.*$,d' '{}' \;
   validate:
     needs: uncomment
     runs-on: ubuntu-latest
 
     steps:
       - name: Validate JSON
-        run: find . -name '*.json' -print -exec python -mjson.tool '{}' \;
+        run: find "${{ github.workspace }}" -name '*.json' -print -exec python -mjson.tool '{}' \;
   build:
     needs: validate
     runs-on: ubuntu-latest
 
     env:
       BuildDir: "[CP] SilenceIsGolden"
-      Manifest: "manifest.json"
-      Content: "content.json"
-      Documentation: "LICENSE README.md release-notes.md"
-      Assets: "assets"
-      I18n: "i18n"
+      Manifest: "${{ github.workspace }}/manifest.json"
+      Content: "${{ github.workspace }}/content.json"
+      Documentation: "${{ github.workspace }}/LICENSE ${{ github.workspace }}/README.md ${{ github.workspace }}/release-notes.md"
+      Assets: "${{ github.workspace }}/assets"
+      I18n: "${{ github.workspace }}/i18n"
 
     steps:
       - name: Create build directory
