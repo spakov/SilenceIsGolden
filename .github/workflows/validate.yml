@@ -2,6 +2,7 @@ name: validate
 
 on:
   push:
+  merge_group:
   workflow_dispatch:
 
 jobs:
