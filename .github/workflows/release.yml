@@ -39,10 +39,10 @@ jobs:
       - name: Copy i18n
         run: cp -R "${{ github.workspace }}/$I18n" "$BuildDir/"
 
-      - name: Create .zip
+      - name: Extract version
         run: |
           Version=$(jq -r .Version "${{ github.workspace }}/$Manifest")
-          zip -r "SilenceIsGolden-$Version.zip" "$BuildDir"
+          echo "ReleaseFile=SilenceIsGolden-$Version.zip" >> $GITHUB_ENV
 
-      - name: Create release
-        run: ls -al SilenceIsGolden*.zip
+      - name: Create .zip
+        run: zip -r "$ReleaseFile" "$BuildDir"
