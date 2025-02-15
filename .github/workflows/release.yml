@@ -1,0 +1,48 @@
+name: release
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+  workflow_dispatch:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    env:
+      BuildDir: "[CP] SilenceIsGolden"
+      Manifest: "manifest.json"
+      Content: "content.json"
+      Documentation: "LICENSE README.md release-notes.md"
+      Assets: "assets"
+      I18n: "i18n"
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create build directory
+        run: mkdir "$BuildDir"
+
+      - name: Copy manifest
+        run: cp "${{ github.workspace }}/$Manifest" "$BuildDir/"
+
+      - name: Copy content
+        run: cp "${{ github.workspace }}/$Content" "$BuildDir/"
+
+      - name: Copy documentation
+        run: for i in $Documentation; do cp "${{ github.workspace }}/$i" "$BuildDir/"; done
+
+      - name: Copy assets
+        run: cp -R "${{ github.workspace }}/$Assets" "$BuildDir/"
+
+      - name: Copy i18n
+        run: cp -R "${{ github.workspace }}/$I18n" "$BuildDir/"
+
+      - name: Create .zip
+        run: |
+          Version=$(jq -r .Version "${{ github.workspace }}/$Manifest")
+          zip -r "SilenceIsGolden-$Version.zip" "$BuildDir"
+
+      - name: Create release
+        run: ls -al "SilenceIsGolden*.zip"
